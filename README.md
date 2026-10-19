@@ -1,45 +1,53 @@
-# Nuclear Nightmare — Traduction française (non officielle)
+# Nuclear Nightmare — Traduction française non officielle
 
-> **En développement — pas de patch installable pour l'instant.** Toutes les entrées disposent d'une première traduction française, mais il reste une relecture et un essai dans le jeu.
+> **Projet en cours de test : aucune version finale publiée.** La première passe française couvre **1 463 / 1 463 entrées** ; une relecture complète et le test dans le jeu restent indispensables.
 
-Traduction française communautaire de **Nuclear Nightmare** (Unreal Engine), indépendante des développeurs du jeu.
+Traduction française communautaire de **Nuclear Nightmare** (Unreal Engine). Projet indépendant de fans, non affilié aux développeurs.
 
-## Avancement
+## État
 
 | Indicateur | Valeur |
 |---|---:|
 | Clés de localisation | **1 463** |
 | Propositions françaises | **1 463 / 1 463** |
-| Textes à relire | **1 454** |
-| Textes à vérifier particulièrement en jeu | **9** |
-| Format | Unreal Engine `.locres` version 3 |
+| Brouillons à relire | **1 443** |
+| Brouillons à vérifier prioritairement dans le jeu | **9** |
+| Textes révisés manuellement | **11** |
+| Entrées EN/RU aux hashes différents | **92** |
+| Traductions spécifiques à la source russe | **11** |
+| Compilation du fichier `.locres` | **Réussie et relue par le parseur** |
+| Compatibilité dans le jeu | **Non testée** |
 
-Les langues anglaise et russe n'ont pas exactement les mêmes identifiants. Un total de 92 clés communes présentent des différences de hash à vérifier.
+**100 % de couverture n'équivaut pas à 100 % de qualité vérifiée.**
 
-## Structure
+## Fichiers
 
-- `translations/NuclearNightmare_traduction_FR.csv` — texte source, traduction FR, identifiants, hashes, états.
-- `tools/construire_fr_locres.py` — reconstruction de `Game.locres` depuis des ressources extraites de sa propre copie du jeu.
-- `docs/AVANCEMENT.md` — progression et points de contrôle.
-- `docs/INSTALLATION.md` — projet d'installation simplifiée.
+- [Traduction principale (CSV)](translations/NuclearNightmare_traduction_FR.csv)
+- [Variantes du texte russe (CSV)](translations/NuclearNightmare_traduction_RU_overrides.csv)
+- [Reconstruction du LocRes](tools/construire_fr_locres.py)
+- [Construction locale du patch .pak de test (Bazzite)](tools/construire_pak_test.sh)
+- [État des travaux](docs/AVANCEMENT.md)
+- [Installation prévue](docs/INSTALLATION.md)
 
-Les fichiers d'origine du jeu ne sont pas publiés. Les textes demeurent à relire en contexte, y compris les rapports et objectifs.
+## Patch de test
 
-## Installation
+Le projet propose désormais une [construction automatisée de l'archive Unreal V11](../../actions/workflows/build-test-pak.yml) via GitHub Actions. La procédure doit :
 
-**Aucune version publique à installer pour le moment.** Après vérification de la compatibilité, le but est un fichier `.pak` autonome à copier dans `NuclearNightmare/Content/Paks/`, sans installateur ni exécutable. La prise en charge de la langue française doit encore être validée.
+1. Décoder le `Game.locres` français précompilé ;
+2. Vérifier son empreinte SHA-256 ;
+3. Fabriquer un `NuclearNightmare-FR_P.pak` indépendant ;
+4. Réouvrir l'archive et comparer les données extraites avec le `Game.locres` attendu ;
+5. Fournir un ZIP **TEST**, non une Release publique.
 
-## Signaler un problème
+**Important :** le fonctionnement réel en jeu n'est pas confirmé. Ce prototype remplace les ressources de la langue **russe** ; si le jeu charge bien le mod, il faudra sélectionner **Russe** dans les paramètres. C'est une solution provisoire pour ne pas modifier les fichiers du jeu ni son menu de langues.
 
-Une fois le test lancé, ouvrez une [Issue](../../issues) avec une capture, le texte concerné, la version du jeu et le contexte.
+Le patch final recherché sera un simple `.pak` à copier, sans installateur et sans EXE.
 
-## Crédits
+## Crédit
 
-**FantinHD** — traduction française
+Projet de traduction : **FantinHD**.
 
 - [YouTube](https://www.youtube.com/@TheFirstDog)
 - [Google Play](https://play.google.com/store/apps/dev?id=8088754359282570640)
 
----
-
-*Traduction de fans non officielle. Le jeu et ses contenus demeurent la propriété de leurs ayants droit. Une copie légitime du jeu est requise.*
+*Traduction fan non officielle. Les droits sur le jeu et ses ressources appartiennent à leurs ayants droit. Une copie légitime du jeu est nécessaire.*
