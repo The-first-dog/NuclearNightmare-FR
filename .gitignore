@@ -1,0 +1,21 @@
+# Proprietary game files and extracted sources
+*.pak
+*.utoc
+*.ucas
+*.uasset
+*.uexp
+*.ubulk
+*.locres
+*.locmeta
+*.tar.gz
+*.exe
+*.dll
+/NuclearNightmare_Traduction/
+/game-original/
+
+# Generated / local files
+__pycache__/
+*.pyc
+.venv/
+*.tmp
+.DS_Store
