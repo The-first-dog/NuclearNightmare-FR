@@ -23,12 +23,21 @@ chmod +x "$REPAK" 2>/dev/null || true
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 STAGE="$WORK/NN-FR-stage"
-OUT="$HERE/dist-test"
+ROOT="$HERE"
+if [[ -d "$HERE/../translations" ]]; then ROOT="$(cd "$HERE/.." && pwd)"; fi
+OUT="$ROOT/dist-test"
+if [[ -d "$ROOT/translations" ]]; then
+  CSV="$ROOT/translations/NuclearNightmare_traduction_FR.csv"
+  RU_OVERRIDES="$ROOT/translations/NuclearNightmare_traduction_RU_overrides.csv"
+else
+  CSV="$HERE/NuclearNightmare_traduction_FR.csv"
+  RU_OVERRIDES="$HERE/NuclearNightmare_traduction_RU_overrides.csv"
+fi
 TARGET="$STAGE/NuclearNightmare/Content/Localization/Game/ru/Game.locres"
 mkdir -p "$(dirname "$TARGET")" "$WORK/paks" "$OUT"
 python3 "$HERE/construire_fr_locres.py" "$SOURCE_ARCHIVE" \
-  "$HERE/NuclearNightmare_traduction_FR.csv" "$TARGET" \
-  --ru-overrides "$HERE/NuclearNightmare_traduction_RU_overrides.csv"
+  "$CSV" "$TARGET" \
+  --ru-overrides "$RU_OVERRIDES"
 # The original archive is V11 with path hash seed 0x42459304 = 1111855876.
 "$REPAK" pack "$STAGE" "$WORK/paks" \
   --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
