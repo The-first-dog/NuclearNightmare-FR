@@ -39,9 +39,9 @@ python3 "$HERE/construire_fr_locres.py" "$SOURCE_ARCHIVE" \
   "$CSV" "$TARGET" \
   --ru-overrides "$RU_OVERRIDES"
 # The original archive is V11 with path hash seed 0x42459304 = 1111855876.
-"$REPAK" pack "$STAGE" "$WORK/paks" \
+PAK="$WORK/paks/NuclearNightmare-FR_P.pak"
+"$REPAK" pack "$STAGE" "$PAK" \
   --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
-PAK="$WORK/paks/NN-FR-stage.pak"
 if [[ ! -s "$PAK" ]]; then echo 'Archive PAK non produite' >&2; exit 1; fi
 PATCH="$OUT/NuclearNightmare-FR_P.pak"
 cp "$PAK" "$PATCH"
