@@ -1,0 +1,75 @@
+name: Build French test PAK
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'build/ru/Game.locres.b64'
+      - '.github/workflows/build-test-pak.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-pak:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decode compiled French localization
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p staging/NuclearNightmare/Content/Localization/Game/ru
+          base64 --decode build/ru/Game.locres.b64 > staging/NuclearNightmare/Content/Localization/Game/ru/Game.locres
+          echo 'b6e66e8f6f241bcf9f5aff065fd0160bbdc8c89b146e50780b337792257d3717  staging/NuclearNightmare/Content/Localization/Game/ru/Game.locres' | sha256sum --check -
+
+      - name: Download repak CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tooling
+          curl -fL --retry 3 'https://github.com/trumank/repak/releases/download/v0.2.3/repak_cli-x86_64-unknown-linux-gnu.tar.xz' -o tooling/repak.tar.xz
+          tar -xJf tooling/repak.tar.xz -C tooling
+          REPAK=$(find tooling -type f \( -name repak -o -name repak_cli \) -print -quit)
+          if [ -z "$REPAK" ]; then echo 'repak binary not found in release' >&2; exit 1; fi
+          chmod +x "$REPAK"
+          echo "REPAK=$(realpath "$REPAK")" >> "$GITHUB_ENV"
+
+      - name: Build Unreal Engine V11 override archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p output install/NuclearNightmare/Content/Paks
+          "$REPAK" pack staging output --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
+          test -f output/staging.pak
+          mv output/staging.pak install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
+
+      - name: Verify PAK contains the correct French localization
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAK=install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
+          "$REPAK" info "$PAK"
+          "$REPAK" list "$PAK" | grep -Fx 'NuclearNightmare/Content/Localization/Game/ru/Game.locres'
+          "$REPAK" get "$PAK" 'NuclearNightmare/Content/Localization/Game/ru/Game.locres' > recovered.locres
+          cmp recovered.locres staging/NuclearNightmare/Content/Localization/Game/ru/Game.locres
+
+      - name: Package TEST ZIP and checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd install
+          zip -qr ../NuclearNightmare-FR-TEST.zip NuclearNightmare
+          cd ..
+          sha256sum NuclearNightmare-FR-TEST.zip > SHA256SUMS.txt
+
+      - name: Publish workflow test artifact (not a release)
+        uses: actions/upload-artifact@v4
+        with:
+          name: NuclearNightmare-FR-TEST
+          path: |
+            NuclearNightmare-FR-TEST.zip
+            SHA256SUMS.txt
+          if-no-files-found: error
