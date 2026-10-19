@@ -1,30 +1,33 @@
-# Avancement — 19 octobre 2026
+# État technique — Nuclear Nightmare FR
 
-## Localisation
+**Dernier point : 19 octobre 2026**
 
-- **1 463 / 1 463** entrées ont un brouillon français.
-- **1 443** entrées n'ont pas encore fait l'objet d'une vérification ciblée.
-- **11** textes ont été révisés manuellement ; ils restent à tester en contexte.
-- **9** textes sensibles (rapports narratifs, instructions longues et textes de test) restent à vérifier prioritairement en jeu.
-- **11** variantes françaises spécifiques aux chaînes russes ont été ajoutées pour corriger de véritables divergences anglais/russe.
-- **92** clés ont un hash de source différent entre les deux localisations.
-- Les balises de formatage et variables ont été contrôlées par le script ; les **1 463** entrées ont passé la reconstruction en `.locres` v3.
+## Couverture des textes
 
-## Patch technique
+- **1 463 / 1 463** identifiants de localisation ont une proposition française.
+- Le fichier anglais fournit **781** entrées, le russe **1 407** ; **725** sont partagées.
+- **11** traductions alternatives ont été retenues lorsque le texte russe différait de l'anglais.
+- **92** entrées anglaises/russes portent des hashes de source différents.
+- Tous les textes français sont renseignés et tous les identifiants sont uniques.
 
-- Archive du jeu d'origine : Unreal Engine PAK V11, mount point `../../../`, seed `0x42459304` (1111855876).
-- Cible provisoire : `NuclearNightmare/Content/Localization/Game/ru/Game.locres`.
-- Constructeur local : `tools/construire_pak_test.sh` (nécessite le programme `repak` installé et les archives sources de sa copie du jeu).
-- Un workflow GitHub Actions produit un ZIP de test et vérifie les octets du `.locres` à l'intérieur du `.pak` construit.
+**Attention :** la couverture de 100 % ne signifie pas que 100 % des formulations sont vérifiées en contexte. Il reste des brouillons et des textes à raccourcir ou corriger selon les retours des joueurs.
 
-**Le chargement effectif du mod dans le jeu n'a pas été vérifié.** Une vérification statique du conteneur n'est pas un test d'intégration Unreal.
+## Validation de la structure
 
-## Prochain contrôle
+- Le `Game.locres` français version 3 a été reconstruit à partir des ressources localisées du jeu.
+- Le fichier construit contient les **1 463** entrées attendues.
+- Le `.pak` version 11 comporte seulement `NuclearNightmare/Content/Localization/Game/ru/Game.locres`.
+- Le ZIP d'installation contient seulement `NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak`.
+- Le constructeur local a vérifié les tailles, empreintes et pointeurs internes. La GitHub Action effectue une vérification supplémentaire avec `repak` avant la mise en ligne.
 
-1. Vérifier que le workflow a abouti et que le ZIP est bien téléchargé depuis ses artefacts.
-2. Copier le `.pak` de test dans `NuclearNightmare/Content/Paks/` sans remplacer l'archive du jeu.
-3. Passer la langue sur **Russe** et vérifier menus, objectifs, descriptions et rapports.
-4. Vérifier les effets d'un patch sur un jeu mis à jour, les textes non couverts par `.locres`, et la présence des glyphes français.
-5. Corriger d'éventuelles erreurs, puis publier une Release lorsque les tests sont réussis.
+## Compatibilité
 
-**Ne pas présenter ce travail comme une traduction intégralement relue.**
+- L'utilisateur indique avoir pu tester favorablement le système de traduction via l'emplacement russe.
+- La version Linux/Proton du jeu ne fonctionne pas sur son poste, et **la compatibilité Linux n'est pas attestée**.
+- La candidate `v1.0.0-rc.1` est destinée à être testée sur une copie originale du jeu avant toute qualification de version stable.
+
+## Distribution
+
+La procédure publie une **Release candidate** depuis GitHub Actions lorsque l'archive a été reconstruite et relue avec `repak`. La visibilité publique du dépôt doit être activée par son propriétaire dans les réglages GitHub.
+
+La publication ne concerne **pas** le Steam Workshop : le patch GitHub est une installation manuelle pour les propriétaires du jeu sur Steam.
