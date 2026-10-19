@@ -4,9 +4,11 @@
 
 ## Télécharger
 
-Consultez les **[Releases GitHub](https://github.com/The-first-dog/NuclearNightmare-FR/releases)** puis téléchargez `NuclearNightmare-FR-v1.0.0-rc.1.zip` lorsque la version apparaît. Les fichiers intitulés « Source code » ne sont pas des installateurs.
+Téléchargez directement **[NuclearNightmare-FR-v1.0.0-rc.1.zip](https://github.com/The-first-dog/NuclearNightmare-FR/raw/refs/heads/main/downloads/NuclearNightmare-FR-v1.0.0-rc.1.zip)**. Le ZIP se trouve aussi dans le dossier `downloads/` du dépôt.
 
-La publication est automatisée après vérification technique. Si le ZIP n'est pas visible dans les Releases, sa présence en ligne **n'a pas encore été confirmée**.
+La page [Releases GitHub](https://github.com/The-first-dog/NuclearNightmare-FR/releases) peut proposer des versions automatisées. Évitez les archives intitulées « Source code » : ce ne sont pas les patches installables.
+
+Le ZIP direct est une **version candidate** : son intégrité et sa structure sont vérifiées, mais son comportement dans chaque version du jeu n'est pas garanti.
 
 ## Installation sous Windows (Steam)
 
