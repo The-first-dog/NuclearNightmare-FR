@@ -1,4 +1,4 @@
-name: Build French test PAK
+name: Build and publish French translation
 
 on:
   push:
@@ -60,7 +60,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          (cd install && zip -q -r ../NuclearNightmare-FR-TEST.zip NuclearNightmare)
+          (cd install && zip -q -r ../NuclearNightmare-FR-v1.0.0-rc.1.zip NuclearNightmare)
           sha256sum NuclearNightmare-FR-TEST.zip > SHA256SUMS.txt
           unzip -l NuclearNightmare-FR-TEST.zip
           test "$(unzip -Z1 NuclearNightmare-FR-TEST.zip | grep -c '\.pak$')" -eq 1
@@ -68,25 +68,27 @@ jobs:
       - name: Publish test artifact
         uses: actions/upload-artifact@v4
         with:
-          name: NuclearNightmare-FR-TEST
+          name: NuclearNightmare-FR-v1.0.0-rc.1
           path: |
             NuclearNightmare-FR-TEST.zip
             SHA256SUMS.txt
           if-no-files-found: error
 
-      - name: Create or update draft GitHub Release for owner testing
+      - name: Publish candidate GitHub Release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          TAG="v0.1.0-test"
+          TAG="v1.0.0-rc.1"
           if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            gh release upload "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt --clobber --repo "$GITHUB_REPOSITORY"
+            gh release upload "$TAG" NuclearNightmare-FR-v1.0.0-rc.1.zip SHA256SUMS.txt --clobber --repo "$GITHUB_REPOSITORY"
+            gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=true \
+              --title "Nuclear Nightmare — Traduction française v1.0.0 RC1"
           else
-            gh release create "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt \
+            gh release create "$TAG" NuclearNightmare-FR-v1.0.0-rc.1.zip SHA256SUMS.txt \
               --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
-              --title "Traduction française — test technique v0.1.0" \
-              --notes "Patch de traduction française (1 463 clés) à tester. Installer en copiant le dossier NuclearNightmare du ZIP dans le dossier principal du jeu, puis sélectionner Russe. Chargement en jeu et qualité linguistique non validés. Ne pas promouvoir comme version stable avant test." \
-              --draft --prerelease
+              --title "Nuclear Nightmare — Traduction française v1.0.0 RC1" \
+              --notes "Traduction française non officielle de Nuclear Nightmare (1 463 clés). Télécharger l'archive ZIP, copier le dossier NuclearNightmare dans le dossier principal du jeu, puis sélectionner Russe dans les paramètres. Aucun exécutable fourni, mod .pak indépendant. Version candidate : certaines formulations et compatibilités restent à contrôler en jeu. Consultez le README et le guide d'installation." \
+              --prerelease
           fi
