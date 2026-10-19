@@ -98,6 +98,7 @@ def main():
     ap.add_argument('archive',help='NuclearNightmare_Traduction.tar.gz')
     ap.add_argument('csv',help='NuclearNightmare_traduction_FR.csv (UTF-8)')
     ap.add_argument('output',help='output Game.locres path')
+    ap.add_argument('--ru-overrides',help='CSV de variantes françaises pour les chaînes russes divergentes')
     ap.add_argument('--allow-incomplete',action='store_true',help='Build an INCOMPLETE test file with fallback languages')
     args=ap.parse_args()
     en_b=read_source(args.archive,'en');ru_b=read_source(args.archive,'ru')
@@ -115,6 +116,20 @@ def main():
     missing=[k for k in expected if not user[k]['Francais'].strip()]
     if missing and not args.allow_incomplete:
         raise ValueError(f'{len(missing)} French translations still blank; use --allow-incomplete ONLY for tests')
+    ru_overrides = {}
+    if args.ru_overrides:
+        with open(args.ru_overrides, 'r', encoding='utf-8-sig', newline='') as rf:
+            for override in csv.DictReader(rf):
+                k = (override['Namespace'], override['Cle'])
+                if k in ru_overrides: raise ValueError('Duplicate RU override '+repr(k))
+                if k not in ru_map: raise ValueError('Unknown RU override '+repr(k))
+                if k not in user: raise ValueError('Missing master entry for RU override '+repr(k))
+                original = ru_map[k][1]
+                translated = override['Francais_RU']
+                if not translated.strip(): raise ValueError('Empty RU override '+repr(k))
+                if sorted(TOKEN.findall(original)) != sorted(TOKEN.findall(translated)):
+                    raise ValueError('Placeholders changed in RU override '+repr(k))
+                ru_overrides[k] = translated
     new_ns=[]; text_pool=[]; index={}
     def add(s):
         if s not in index:index[s]=len(text_pool);text_pool.append(s)
@@ -133,7 +148,7 @@ def main():
             if fr and sorted(TOKEN.findall(source))!=sorted(TOKEN.findall(fr)):
                 raise ValueError('Placeholders changed for key '+key)
             fallback=r['Anglais'] or r['Russe']
-            string=fr if fr.strip() else fallback
+            string=ru_overrides.get(k, fr if fr.strip() else fallback)
             entry=ru_entries.get(key, en_entries.get(key))
             entries.append([entry[0],key,entry[2],add(string)])
         new_ns.append([ns_hash,ns,entries])
@@ -143,7 +158,7 @@ def main():
     target.write_bytes(b)
     parsed,pool=read_locres(b)
     assert sum(len(x[2]) for x in parsed)==len(expected)
-    print(f'Created: {target} ({len(expected)} keys, {len(missing)} incomplete translations)')
+    print(f'Created: {target} ({len(expected)} keys, {len(missing)} incomplete translations, {len(ru_overrides)} RU semantic overrides)')
     print('Note: this is NOT an installable mod; it still needs registration of the French culture and packaging.')
 
 if __name__=='__main__':
