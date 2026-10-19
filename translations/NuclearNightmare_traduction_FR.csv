@@ -20,7 +20,7 @@ ID,Cle,Namespace,Anglais,Russe,Francais,Statut,Source,Hash_EN,Hash_RU,Priorite,H
 19,03C8C6084AA1F2868C7445AB527BC049,,9,9,9,Brouillon FR - à relire,EN + RU,2892458039,2892458039,Menus / interface,
 20,03C988C94134BC20EBD05A868D612E9A,,30 Seconds,30 секунд,30 secondes,Brouillon FR - à relire,EN + RU,1485952322,1485952322,Menus / interface,
 21,0409F07548017968CE9429A6DCFFED8F,,,Отмена,Annuler,Brouillon FR - à relire,RU uniquement,,1948404912,Gameplay / autre,
-22,04249359481A90E93B96119EC2E0D2E9,,Bro please go and get the generator!,"Чел, пожалуйста, сходи к генератору!","Allez, va chercher le générateur !",Brouillon FR - à relire,EN + RU,2557448233,2557448233,Menus / interface,
+22,04249359481A90E93B96119EC2E0D2E9,,Bro please go and get the generator!,"Чел, пожалуйста, сходи к генератору!","Allez, récupère le générateur, s’il te plaît !",Révisé FR - test en jeu requis,EN + RU,2557448233,2557448233,Menus / interface,
 23,0465F8724DB14A61C85C48845DE02911,,,Эвакуационная команда вызвала вертолёт. Время на исходе — ассимилируйте их до его прибытия!,L'équipe d'évacuation a appelé l'hélicoptère. Le temps presse : assimilez-la avant son arrivée !,Brouillon FR - à relire,RU uniquement,,1332943453,Gameplay / autre,
 24,04A552254B73C0EB17AF8787FCF261D7,,,Общее,Général,Brouillon FR - à relire,RU uniquement,,151724115,Gameplay / autre,
 25,04BED059460CB45D215CB5B116BF752C,,,Купить,Acheter,Brouillon FR - à relire,RU uniquement,,1426759650,Gameplay / autre,
@@ -160,7 +160,7 @@ ID,Cle,Namespace,Anglais,Russe,Francais,Statut,Source,Hash_EN,Hash_RU,Priorite,H
 140,198C5F4B4EBF3148D094019C3512E218,,"+ Beepers can detect infected humans 
 - Beeps for uninfected humans as well","+ Пищалки могут обнаружить зараженных людей
 - При этом они все еще срабатывают на врагов, что может сбить с толку","+ Les détecteurs sonores repèrent les humains infectés
-- Ils bipent aussi pour les humains non infectés",Brouillon FR - à relire,EN + RU,1010580269,2101181100,Gameplay / autre,Oui
+- Ils sonnent également pour les humains non infectés",Révisé FR - test en jeu requis,EN + RU,1010580269,2101181100,Gameplay / autre,Oui
 141,199C23F449F430A334E6ED9B4F67B4E9,,Press ENTER to Touchdown,"Нажмите ENTER, чтобы приземлиться",Appuyez sur ENTRÉE pour atterrir,Brouillon FR - à relire,EN + RU,3514517821,3514517821,Menus / interface,
 142,19C0772E432ACC907C85F9A920F80BC0,,,Движение,Déplacement,Brouillon FR - à relire,RU uniquement,,4015612578,Gameplay / autre,
 143,1A5A13BF414472BD9FD03C95816C7959,,,Рычаги:,Leviers :,Brouillon FR - à relire,RU uniquement,,3543641343,Gameplay / autre,
@@ -674,7 +674,7 @@ Voulez-vous réinitialiser les paramètres des émotes ?\
 Cette action supprimera définitivement toute votre progression et ne pourra pas être annulée.\
 \
 N'utilisez cette option que si vos données sont endommagées ou si vous souhaitez recommencer la partie.",Brouillon FR - vérifier en jeu,RU uniquement,,3290642178,Gameplay / autre,
-364,3F87D91C4255D7D561EEC38AEB91229B,,,Патроны для револьвера,Cartouches de revolver,Brouillon FR - à relire,RU uniquement,,2663755190,Gameplay / autre,
+364,3F87D91C4255D7D561EEC38AEB91229B,,,Патроны для револьвера,Munitions de revolver,Révisé FR - test en jeu requis,RU uniquement,,2663755190,Gameplay / autre,
 365,4013996A42624E4F0387DCA60AB19BCA,,Reset,Сброс,Réinitialiser,Brouillon FR - à relire,EN + RU,2092924083,720703838,Menus / interface,Oui
 366,401725EA4798B3955B840CB3DEEBBD2D,,Music Volume,Громкость музыки,Volume de la musique,Brouillon FR - à relire,EN + RU,3360614701,3495351770,Menus / interface,Oui
 367,4028B88946CC06E1FB25DDBDB56E79E6,,,Осмотрите зараженную собаку у будки.,Examinez le chien infecté près de sa niche.,Brouillon FR - à relire,RU uniquement,,3644340266,Gameplay / autre,
@@ -686,8 +686,8 @@ N'utilisez cette option que si vos données sont endommagées ou si vous souhait
 370,40B7751340D9B5B2D7687086198A05DB,,- Manual Waypoint,,- Point de passage manuel,Brouillon FR - à relire,EN uniquement,2977639816,,Gameplay / autre,
 371,40D448184623DEDB2BB142A87C326215,,"+ Decreases gas consumption by 50% when driving 
 - Drives 50% slower","+ Снижает расход топлива на 50% во время езды \
-- Разгон до максимальной скорости занимает вдвое больше времени","+ Réduit la consommation de carburant de 50 %
-- Réduit la vitesse de conduite de 50 %",Brouillon FR - à relire,EN + RU,2993667514,3908079468,Gameplay / autre,Oui
+- Разгон до максимальной скорости занимает вдвое больше времени","+ Réduit de 50 % la consommation de carburant en conduisant
+- Réduit la vitesse de déplacement de 50 %",Révisé FR - test en jeu requis,EN + RU,2993667514,3908079468,Gameplay / autre,Oui
 372,40D6128549B37DB66C7E1185785DE668,,,Дизайнерский,Tenue de créateur,Brouillon FR - à relire,RU uniquement,,895933109,Gameplay / autre,
 373,40FA80654C901509A81E57864566451B,,Status:,Статус:,Statut :,Brouillon FR - à relire,EN + RU,2055032676,2055032676,Menus / interface,
 374,413E32914476B6B95E3575A93A08BD03,,,Включено,Activé,Brouillon FR - à relire,RU uniquement,,1315344152,Gameplay / autre,
@@ -797,8 +797,7 @@ Mitrailleuse légère : 160 à 400 munitions. Lance-flammes : 300 à 500 munitio
 467,511601744D8AB709D4FF24B52D902F31,,Fullscreen,Полный экран,Plein écran,Brouillon FR - à relire,EN + RU,3866659450,1105655149,Menus / interface,Oui
 468,512AFA80403C3F0BDB297CB92D61A893,,,Идти влево,Aller à gauche,Brouillon FR - à relire,RU uniquement,,872775331,Gameplay / autre,
 469,516152C64CA1CEF1E86113BAE1D4FF35,,,Рядом с Лесопилкой,Près de la scierie,Brouillon FR - à relire,RU uniquement,,2753647829,Gameplay / autre,
-470,518687AA4C188BFA553EEE9A69C97A5A,,Computer,Компьютер,Ordinateur,Brouillon FR - à relire,EN + RU,29266832,29266832,Menus / interface,
-471,51F7220140D1C403E5A1EBA926660BEA,,,Миссия провалена...,Mission échouée...,Brouillon FR - à relire,RU uniquement,,2817306758,Gameplay / autre,
+470,518687AA4C188BFA553EEE9A69C97A5A,,Computer,Компьютер,Ordinateur,Brouillon FR - à relire,EN + RU,29266832,29266832,Menus / interface,471,51F7220140D1C403E5A1EBA926660BEA,,,Миссия провалена...,Mission échouée...,Brouillon FR - à relire,RU uniquement,,2817306758,Gameplay / autre,
 472,5201BA624A5912E4C93E7FBC093DCE24,,,Кошмар,Cauchemar,Brouillon FR - à relire,RU uniquement,,146327483,Gameplay / autre,
 473,520E20E744EA91DCD50098BD473FB915,,,Общее,Général,Brouillon FR - à relire,RU uniquement,,151724115,Gameplay / autre,
 474,522ED1314128CF86DB3D478BEEA008CD,,Leave,Выйти,Quitter,Brouillon FR - à relire,EN + RU,2134108576,2134108576,Menus / interface,
@@ -997,7 +996,8 @@ N'utilisez cette option que si vos données sont endommagées ou si vous souhait
 - Огонь убивает мгновенно","+ La température n'a aucun effet sur vous
 - Le feu vous tue instantanément",Brouillon FR - à relire,EN + RU,1112097580,1112097580,Gameplay / autre,
 535,5ACEFDCD488F94F4F76B06979BC69499,,,"Враги получают шанс заразить вас, как только увидят. Включается вместо стандартного заражения через физический контакт.","Les ennemis peuvent vous infecter dès qu'ils vous voient, plutôt qu'au contact physique.",Brouillon FR - à relire,RU uniquement,,396640163,Gameplay / autre,
-536,5AE1E06D4EF071CF4EBD018210A5EF7E,,Controls,,Commandes,Brouillon FR - à relire,EN uniquement,818748456,,Menus / interface,537,5AF8FBC84BBB73C6D5BCAF929A849A38,,category,категория,catégorie,Brouillon FR - à relire,EN + RU,1768036422,1768036422,Menus / interface,
+536,5AE1E06D4EF071CF4EBD018210A5EF7E,,Controls,,Commandes,Brouillon FR - à relire,EN uniquement,818748456,,Menus / interface,
+537,5AF8FBC84BBB73C6D5BCAF929A849A38,,category,категория,catégorie,Brouillon FR - à relire,EN + RU,1768036422,1768036422,Menus / interface,
 538,5B3176034303F1AC1BC59B8C37871EB6,,2:00,2:00,2:00,Brouillon FR - à relire,EN + RU,301686380,301686380,Menus / interface,
 539,5B3FF46A4A2CF4B5ED1277BA049A6475,,,Ячейка инвентаря 3,Emplacement d'inventaire 3,Brouillon FR - à relire,RU uniquement,,3352193970,Gameplay / autre,
 540,5B4CC6324F0C0305192333AFD782EBFE,,BG Productions,BG Productions,BG Productions,Brouillon FR - à relire,EN + RU,1266791838,1266791838,Menus / interface,
@@ -1556,7 +1556,7 @@ N'utilisez cette option que si vos données sont endommagées ou si vous souhait
 894,983F1BDA443C29827F94ED964F00DBD3,,,Выкл,Désactivé,Brouillon FR - à relire,RU uniquement,,1756308069,Gameplay / autre,
 895,9863424147DE4E98B6890BABE9D0244A,,Prepare Drone For Upload...,Подготовить дрон к отправке...,Préparer le drone pour la transmission...,Brouillon FR - à relire,EN + RU,3078001391,3078001391,Menus / interface,
 896,9872555C411A2A074A65529CE564356C,,Invite Sent!,Приглашение отправлено!,Invitation envoyée !,Brouillon FR - à relire,EN + RU,1558640037,3364853191,Menus / interface,Oui
-897,98967BA342549D0DB88754B463FA8FC6,,Emotes,Жесты,Emotes,Brouillon FR - à relire,EN + RU,2232274118,3384537376,Menus / interface,Oui
+897,98967BA342549D0DB88754B463FA8FC6,,Emotes,Жесты,Émotes,Révisé FR - test en jeu requis,EN + RU,2232274118,3384537376,Menus / interface,Oui
 898,98A0D41544607487A60D56B481EC8F86,,,Место крушения,Lieu du crash,Brouillon FR - à relire,RU uniquement,,13930394,Gameplay / autre,
 899,98AAC97F438DD47F913AD8A6728C8A66,,"Generators control locked doors, keypads, lights, and lasers. So watchout for power surges!","Генераторы управляют замками, датчиками, освещением и лазерами. Так что будьте готовы к скачкам напряжения!","Les générateurs contrôlent les portes verrouillées, les claviers, les lumières et les lasers. Attention aux surtensions !",Brouillon FR - à relire,EN + RU,2218679284,2218679284,Gameplay / autre,
 900,98AB10C24DB2035018E843B7F2A1F3FB,,Helicopter,Вертолет,Hélicoptère,Brouillon FR - à relire,EN + RU,2313039777,2313039777,Menus / interface,
@@ -1596,8 +1596,7 @@ N'utilisez cette option que si vos données sont endommagées ou si vous souhait
 928,9EE39F2246EF632B5CFAB9BF06240184,,,Движение,Déplacement,Brouillon FR - à relire,RU uniquement,,4015612578,Gameplay / autre,
 929,9F126DEE4DD2FD382D3731A6661D5AFE,,,Ассимилировать,Assimiler,Brouillon FR - à relire,RU uniquement,,2093104003,Gameplay / autre,
 930,9F2385714281A8DCF96CB080C56576E7,,,Сфотографируйте уничтоженный вертолет.,Photographiez l'hélicoptère détruit.,Brouillon FR - à relire,RU uniquement,,3925975209,Gameplay / autre,
-931,9F4172C9438E88B92DDC7887BAFB6A20,,,Нормальный,Normal,Brouillon FR - à relire,RU uniquement,,926731589,Gameplay / autre,
-932,9FDE7D5A4ECD53A796C8179746D8AC16,,...,...,...,Brouillon FR - à relire,EN + RU,650405600,650405600,Menus / interface,
+931,9F4172C9438E88B92DDC7887BAFB6A20,,,Нормальный,Normal,Brouillon FR - à relire,RU uniquement,,926731589,Gameplay / autre,932,9FDE7D5A4ECD53A796C8179746D8AC16,,...,...,...,Brouillon FR - à relire,EN + RU,650405600,650405600,Menus / interface,
 933,A057738740E3468CD15F8F8F03F5A2CC,,,Сфотографируйте разбитые пробирки.,Photographiez les éprouvettes cassées.,Brouillon FR - à relire,RU uniquement,,51183318,Gameplay / autre,
 934,A0698886407885A659B0F2A123DEFC90,,None,Ничего,Aucun,Brouillon FR - à relire,EN + RU,1897401797,1897401797,Menus / interface,
 935,A0AC187F437E115A3674B4A426CCEF34,,Generate Drone Report,Сделайте отчет о работе дрона,Générer un rapport de drone,Brouillon FR - à relire,EN + RU,3858314583,3858314583,Menus / interface,
@@ -1772,7 +1771,7 @@ Repérez bien les poteaux lumineux rouges et les panneaux qui mènent aux diffé
 1065,B49947B64905E4AD171182AC534901F4,,Workers,Рабочие,Ouvriers,Brouillon FR - à relire,EN + RU,2296255525,2296255525,Menus / interface,
 1066,B4CECF654BFEF0B32680F9AD89195826,,Soft Feet,Тихие шаги,Pas feutrés,Brouillon FR - à relire,EN + RU,4077464616,4077464616,Menus / interface,
 1067,B52BC0E046FF8F7E2CF1688CFC5433B2,,Drill,Бур,Forer,Brouillon FR - à relire,EN + RU,1867115886,1867115886,Menus / interface,
-1068,B52CABD243B4FCDA48A8BC91F799A9BC,,Item Select (SCROLL WHEEL),Выбор предмета (Прокрутить колесико мыши),Choisir l’objet (molette),Brouillon FR - à relire,EN + RU,3458610383,3458610383,Menus / interface,
+1068,B52CABD243B4FCDA48A8BC91F799A9BC,,Item Select (SCROLL WHEEL),Выбор предмета (Прокрутить колесико мыши),Sélectionner un objet (molette),Révisé FR - test en jeu requis,EN + RU,3458610383,3458610383,Menus / interface,
 1069,B54F775049C6DA8C85F9BCAAEEBDCE35,,9mm,Патроны 9мм,9 mm,Brouillon FR - à relire,EN + RU,1895256142,2919406964,Menus / interface,Oui
 1070,B5762D96401D027D29B05FA94809E663,,,BG Productions был Импостером!,BG Productions était l'Imposteur !,Brouillon FR - à relire,RU uniquement,,4173418523,Gameplay / autre,
 1071,B59AA4C44F5699A0E6EC38B723B7569B,,Not purchased,Не куплено,Non acheté,Brouillon FR - à relire,EN + RU,435638229,435638229,Menus / interface,
@@ -1890,7 +1889,7 @@ Repérez bien les poteaux lumineux rouges et les panneaux qui mènent aux diffé
 1169,C6F1C780464098E337EF5BAEDA82CE7D,,- Satellite,,- Satellite,Brouillon FR - à relire,EN uniquement,1897003161,,Gameplay / autre,
 1170,C716B4314286E3956E80D29E299C0B40,,,Ручное управление погодой,Contrôle manuel de la météo,Brouillon FR - à relire,RU uniquement,,2783558885,Gameplay / autre,
 1171,C728EF644BF8D9A5933BCCA092E43FDD,,Warm Blooded,Теплокровный,Sang chaud,Brouillon FR - à relire,EN + RU,2751300427,2751300427,Menus / interface,
-1172,C74608F741C0FC2B76A0E6A8361FBDC1,,If plugged in while the application is running you will have to restart the game.,"Если микрофон был подключен во время работы игры, может потребоваться перезапуск.","Si un appareil est branché pendant l'exécution du jeu, vous devrez redémarrer celui-ci.",Brouillon FR - à relire,EN + RU,2553676128,2987146741,Gameplay / autre,Oui
+1172,C74608F741C0FC2B76A0E6A8361FBDC1,,If plugged in while the application is running you will have to restart the game.,"Если микрофон был подключен во время работы игры, может потребоваться перезапуск.","Si vous branchez un appareil pendant que le jeu est ouvert, vous devrez peut-être redémarrer le jeu pour qu’il soit détecté.",Révisé FR - test en jeu requis,EN + RU,2553676128,2987146741,Gameplay / autre,Oui
 1173,C764EB3E41F30D5EED67F4A0F4BDF44A,,Scientist,,Scientifique,Brouillon FR - à relire,EN uniquement,1931083051,,Menus / interface,
 1174,C815C938474598739B3D039215E2D0C8,,,СОСТОЯНИЕ,ÉTAT,Brouillon FR - à relire,RU uniquement,,1118723356,Gameplay / autre,
 1175,C84D76B74CDEB67C315C09B6F12AB6C9,,"+ Increases vehicles (snowmobiles or helicopter) speed by 50%
@@ -1996,7 +1995,8 @@ Si vous êtes prêt, le tutoriel se termine ici.",Brouillon FR - à relire,EN + 
 1258,D60A1B44437E2995F71C3C95CBC2E304,,Not enough points,Недостаточно очков,Pas assez de points,Brouillon FR - à relire,EN + RU,2092393438,2092393438,Menus / interface,
 1259,D6133F8743C95FEEC69338A1D23C8EE6,,06:00,06:00,06:00,Brouillon FR - à relire,EN + RU,3701356829,3701356829,Menus / interface,
 1260,D62E5B4242E5B91140BFD6ACB5912EDE,,,Идти назад,Reculer,Brouillon FR - à relire,RU uniquement,,2629952239,Gameplay / autre,
-1261,D631A01E455363285FC69281319A4681,,5,5,5,Brouillon FR - à relire,EN + RU,3870414735,3870414735,Menus / interface,1262,D63800CB410EE0B6233EACB10C424A3D,,+2000,+2000,+2000,Brouillon FR - à relire,EN + RU,808234406,808234406,Menus / interface,
+1261,D631A01E455363285FC69281319A4681,,5,5,5,Brouillon FR - à relire,EN + RU,3870414735,3870414735,Menus / interface,
+1262,D63800CB410EE0B6233EACB10C424A3D,,+2000,+2000,+2000,Brouillon FR - à relire,EN + RU,808234406,808234406,Menus / interface,
 1263,D67FCC00453ACDF943AA1D9B7809B0F0,,Purchased,Куплено,Acheté,Brouillon FR - à relire,EN + RU,4081289151,4081289151,Menus / interface,
 1264,D69D8FDC44011957E34FA99CCA7537C7,,"+ Beef jerky can be eaten for extra health 
 - Cannot give beef jerky to huskies","+ Вяленую говядину можно есть для дополнительного здоровья 
@@ -2069,7 +2069,7 @@ Si vous êtes prêt, le tutoriel se termine ici.",Brouillon FR - à relire,EN + 
 1320,E03521F649D3C5C0B5C2FAB3A6E042BD,,,Заброшенный лагерь экспедиции,Camp d'expédition abandonné,Brouillon FR - à relire,RU uniquement,,3272010967,Gameplay / autre,
 1321,E07FC70C41F5E71B22225D9850B4A657,,,Основной цвет обуви,Couleur principale des chaussures,Brouillon FR - à relire,RU uniquement,,624380562,Gameplay / autre,
 1322,E0B4576A43E35766E0611F89BEC18FB9,,,Сфотографируйте все следы зараженных трупов.,Photographiez toutes les traces laissées par les cadavres infectés.,Brouillon FR - à relire,RU uniquement,,767932856,Gameplay / autre,
-1323,E0BF37944D92773609AFCEB186FFAF87,,Helicopter Pitch (MOUSE Y),Наклон вертолета (МЫШЬ Y),Tangage de l'hélicoptère (SOURIS Y),Brouillon FR - à relire,EN + RU,444672681,444672681,Menus / interface,
+1323,E0BF37944D92773609AFCEB186FFAF87,,Helicopter Pitch (MOUSE Y),Наклон вертолета (МЫШЬ Y),Inclinaison de l’hélicoptère (axe Y de la souris),Révisé FR - test en jeu requis,EN + RU,444672681,444672681,Menus / interface,
 1324,E165805F4AB681E6DE78DAB7C2285C66,,Status:,Статус:,Statut :,Brouillon FR - à relire,EN + RU,2055032676,2055032676,Menus / interface,
 1325,E19E026047F2386D409B2A809B555904,,Day 2,День 2,Jour 2,Brouillon FR - à relire,EN + RU,4183696845,4183696845,Menus / interface,
 1326,E212C9064663406BB3F31C9AE90897BB,,Hide Player Name Tags,Скрыть имена игроков,Masquer les noms des joueurs,Brouillon FR - à relire,EN + RU,3196839804,1805234913,Menus / interface,Oui
@@ -2117,17 +2117,17 @@ Si vous êtes prêt, le tutoriel se termine ici.",Brouillon FR - à relire,EN + 
 1365,E9BDAB9442AB2C0F0C55D6BA718041D8,,,Сфотографируйте все следы крови из пробирок.,Photographiez toutes les traces de sang provenant des éprouvettes.,Brouillon FR - à relire,RU uniquement,,2785078273,Gameplay / autre,
 1366,E9D756454CB110C566156AB9D835590C,,,Прорыв блока,Briseur de garde,Brouillon FR - à relire,RU uniquement,,3670171051,Gameplay / autre,
 1367,EA08544B4EBC24B7D47D528BBBF4B99C,,7mm,Патроны 7мм,7 mm,Brouillon FR - à relire,EN + RU,2579923792,2699806459,Menus / interface,Oui
-1368,EA6B70244BF85830C0C9BF991C0CC29F,,Helicopter Pitch Sensitivity,Чувствительность наклона вертолета,Sensibilité du tangage de l'hélicoptère,Brouillon FR - à relire,EN + RU,2116575991,667994056,Menus / interface,Oui
+1368,EA6B70244BF85830C0C9BF991C0CC29F,,Helicopter Pitch Sensitivity,Чувствительность наклона вертолета,Sensibilité du tangage de l’hélicoptère,Révisé FR - test en jeu requis,EN + RU,2116575991,667994056,Menus / interface,Oui
 1369,EA99F9EF4B1111E299B3E9AEE5C2FB28,,Reverse (S),Задний ход (S),Reculer (S),Brouillon FR - à relire,EN + RU,3225821711,3225821711,Menus / interface,
 1370,EAD4462D42FF6F8E62CB1EAF8E442B83,,,ЛЕГКО,FACILE,Brouillon FR - à relire,RU uniquement,,2130063147,Gameplay / autre,
 1371,EB34150442F33B321D3132900E27F5C2,,Fire Resistance,Огнестойкость,Résistance au feu,Brouillon FR - à relire,EN + RU,1579330942,1579330942,Menus / interface,
 1372,EB7D21D6439003DD40BA808E83BF0E89,,Desperation Dash,Отчаянный рывок,Course désespérée,Brouillon FR - à relire,EN + RU,3676010571,3676010571,Menus / interface,
 1373,EB8B4D184A6B98AF60709CA42A44A4C1,,,Дополнительная клавиша для карты,Touche secondaire pour la carte,Brouillon FR - à relire,RU uniquement,,892134739,Gameplay / autre,
 1374,EBDD85D14DE3156B7F6FA993B2FF1CC6,,2,2,2,Brouillon FR - à relire,EN + RU,2070343478,2070343478,Menus / interface,
-1375,EC15D2F143B927E02CA593B8BAD96CC7,,Helicopter Roll Sensitivity,Чувствительность вращения вертолета,Sensibilité du roulis de l'hélicoptère,Brouillon FR - à relire,EN + RU,3328144801,491873775,Menus / interface,Oui
+1375,EC15D2F143B927E02CA593B8BAD96CC7,,Helicopter Roll Sensitivity,Чувствительность вращения вертолета,Sensibilité du roulis de l’hélicoptère,Révisé FR - test en jeu requis,EN + RU,3328144801,491873775,Menus / interface,Oui
 1376,EC6D03AC4A0CE1117ED60FBB5924E6ED,,,Нет,Non,Brouillon FR - à relire,RU uniquement,,1897401797,Gameplay / autre,
 1377,EC721EB54AEA6605B376EF9ACADFB2D0,,Visit the customization tab in the Main Menu to unlock perks. Soda machines are used for equipping perks...,"Перейдите в раздел кастомизации в главном меню, чтобы открыть перки. Перки можно выбрать через автоматы с газировкой...",Ouvrez l'onglet Personnalisation du menu principal pour débloquer des compétences. Utilisez les distributeurs de sodas pour les équiper...,Brouillon FR - à relire,EN + RU,2516213003,2516213003,Gameplay / autre,
-1378,ED0CEA9549F585D68641C08912F719F2,,Camera Smoothing (Lag Effect),Сглаживание камеры (эффект задержки),Lissage de la caméra (effet de retard),Brouillon FR - à relire,EN + RU,2984403575,1010979190,Menus / interface,Oui
+1378,ED0CEA9549F585D68641C08912F719F2,,Camera Smoothing (Lag Effect),Сглаживание камеры (эффект задержки),Lissage de la caméra (effet de latence),Révisé FR - test en jeu requis,EN + RU,2984403575,1010979190,Menus / interface,Oui
 1379,ED290AE54E97E2CC3CA9FCBF4F5A41C5,,,ДОСТУПНО,DISPONIBLE,Brouillon FR - à relire,RU uniquement,,2618594533,Gameplay / autre,
 1380,ED3E8E5A44E32C0B3250C58C9A4E728B,,Print Report,Распечатать Отчет,Imprimer le rapport,Brouillon FR - à relire,EN + RU,2834662464,2834662464,Menus / interface,
 1381,ED50E62F472EBA71AACED996B5AEFF45,,,Сфотографируй обломки упавшего грузового самолёта.,Photographiez les débris de l'avion-cargo écrasé.,Brouillon FR - à relire,RU uniquement,,727572938,Gameplay / autre,
