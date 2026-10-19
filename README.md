@@ -1,53 +1,84 @@
-# Nuclear Nightmare — Traduction française non officielle
+# Nuclear Nightmare — Traduction française 🇫🇷
 
-> **Projet en cours de test : aucune version finale publiée.** La première passe française couvre **1 463 / 1 463 entrées** ; une relecture complète et le test dans le jeu restent indispensables.
+Traduction française **non officielle** de **Nuclear Nightmare**, créée par **FantinHD**.
 
-Traduction française communautaire de **Nuclear Nightmare** (Unreal Engine). Projet indépendant de fans, non affilié aux développeurs.
+Ce projet vise à rendre le jeu accessible en français, avec une installation simple : **un fichier `.pak` à copier, sans exécutable ni installateur**.
 
-## État
+## 📥 Télécharger la traduction
 
-| Indicateur | Valeur |
-|---|---:|
-| Clés de localisation | **1 463** |
-| Propositions françaises | **1 463 / 1 463** |
-| Brouillons à relire | **1 443** |
-| Brouillons à vérifier prioritairement dans le jeu | **9** |
-| Textes révisés manuellement | **11** |
-| Entrées EN/RU aux hashes différents | **92** |
-| Traductions spécifiques à la source russe | **11** |
-| Compilation du fichier `.locres` | **Réussie et relue par le parseur** |
-| Compatibilité dans le jeu | **Non testée** |
+> ⚠️ **Version en préparation — aucun patch validé dans le jeu n'est encore disponible au téléchargement.**
 
-**100 % de couverture n'équivaut pas à 100 % de qualité vérifiée.**
+Les **1 463 entrées de localisation** disposent déjà d'une proposition française. Nous terminons la relecture et les essais techniques du patch.
 
-## Fichiers
+➡️ [Consulter les versions disponibles (Releases)](https://github.com/The-first-dog/NuclearNightmare-FR/releases) — *aucune version publiée pour le moment*.
 
-- [Traduction principale (CSV)](translations/NuclearNightmare_traduction_FR.csv)
-- [Variantes du texte russe (CSV)](translations/NuclearNightmare_traduction_RU_overrides.csv)
-- [Reconstruction du LocRes](tools/construire_fr_locres.py)
-- [Construction locale du patch .pak de test (Bazzite)](tools/construire_pak_test.sh)
-- [État des travaux](docs/AVANCEMENT.md)
-- [Installation prévue](docs/INSTALLATION.md)
+**Ne téléchargez pas le code source du dépôt en pensant installer la traduction : il ne s'agit pas du patch.**
 
-## Patch de test
+## 🇫🇷 Contenu traduit
 
-Le projet propose désormais une [construction automatisée de l'archive Unreal V11](../../actions/workflows/build-test-pak.yml) via GitHub Actions. La procédure doit :
+- Menus et interface
+- Paramètres et commandes
+- Objectifs et notifications
+- Objets, équipements et compétences
+- Messages de jeu et descriptions
+- Textes de localisation supplémentaires présents en russe
 
-1. Décoder le `Game.locres` français précompilé ;
-2. Vérifier son empreinte SHA-256 ;
-3. Fabriquer un `NuclearNightmare-FR_P.pak` indépendant ;
-4. Réouvrir l'archive et comparer les données extraites avec le `Game.locres` attendu ;
-5. Fournir un ZIP **TEST**, non une Release publique.
+**État actuel :** 1 463 / 1 463 entrées proposées en français. Certaines phrases doivent encore être revues dans leur contexte et tous les textes de l'interface ne sont pas nécessairement stockés dans ces fichiers.
 
-**Important :** le fonctionnement réel en jeu n'est pas confirmé. Ce prototype remplace les ressources de la langue **russe** ; si le jeu charge bien le mod, il faudra sélectionner **Russe** dans les paramètres. C'est une solution provisoire pour ne pas modifier les fichiers du jeu ni son menu de langues.
+## 📦 Comment installer la traduction ?
 
-Le patch final recherché sera un simple `.pak` à copier, sans installateur et sans EXE.
+*Les étapes ci-dessous décrivent l'installation prévue du futur patch. Elles seront confirmées lors du test dans le jeu.*
 
-## Crédit
+1. Téléchargez **`NuclearNightmare-FR.zip`** depuis la rubrique **Releases**, une fois la première version publiée.
+2. Dans **Steam**, faites un clic droit sur **Nuclear Nightmare** → **Propriétés** → **Fichiers installés** → **Parcourir**.
+3. Ouvrez le ZIP et copiez le dossier **`NuclearNightmare`** dans le dossier principal du jeu.
+4. Acceptez la **fusion des dossiers**, sans remplacer le fichier original **`NuclearNightmare-Windows.pak`**.
+5. Lancez le jeu. **Pour la première version de test, sélectionnez « Russe »** dans les paramètres de langue : cette entrée servira provisoirement à afficher le français, *si le mod est correctement chargé*.
 
-Projet de traduction : **FantinHD**.
+Le fichier ajouté sera :
 
-- [YouTube](https://www.youtube.com/@TheFirstDog)
-- [Google Play](https://play.google.com/store/apps/dev?id=8088754359282570640)
+```text
+NuclearNightmare/
+└── Content/
+    └── Paks/
+        ├── NuclearNightmare-Windows.pak     ← archive originale (ne pas toucher)
+        └── NuclearNightmare-FR_P.pak         ← traduction française
+```
 
-*Traduction fan non officielle. Les droits sur le jeu et ses ressources appartiennent à leurs ayants droit. Une copie légitime du jeu est nécessaire.*
+📖 [Instructions détaillées et résolution de problèmes](docs/INSTALLATION.md)
+
+## 🗑️ Comment désinstaller ?
+
+Supprimez uniquement **`NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak`** puis relancez le jeu. Vous ne devriez pas avoir besoin de réinstaller le jeu.
+
+## 🔒 Transparence et sécurité
+
+- Aucun programme `.exe`, aucune modification du jeu original.
+- Le futur téléchargement contiendra seulement le patch `.pak` et des instructions.
+- Le projet est consultable sur GitHub ; les versions seront accompagnées d'une empreinte SHA-256.
+- **Compatibilité non encore confirmée** : aucune promesse que le mod fonctionne tant que le test en jeu n'est pas terminé.
+- Une **copie légitime du jeu** est nécessaire.
+
+## 💬 Un problème de traduction ?
+
+Vous pouvez [ouvrir une Issue sur GitHub](https://github.com/The-first-dog/NuclearNightmare-FR/issues) avec une capture d'écran, le texte à corriger et la version du jeu.
+
+## 🛠️ Pour les contributeurs
+
+Les fichiers de traduction et outils se trouvent dans ce dépôt :
+
+- [Tableau des traductions](translations/NuclearNightmare_traduction_FR.csv)
+- [Suivi de l'avancement](docs/AVANCEMENT.md)
+- [Scripts et ressources de construction](tools/)
+- [Fichier de construction du patch de test](.github/workflows/build-test-pak.yml)
+
+Ces fichiers techniques **ne sont pas nécessaires** pour installer une future version publique.
+
+## 👤 FantinHD
+
+▶️ [YouTube](https://www.youtube.com/@TheFirstDog)  
+🎮 [Mes jeux sur Google Play](https://play.google.com/store/apps/dev?id=8088754359282570640)
+
+---
+
+*Projet de fans non officiel et sans but lucratif. Aucun lien avec les développeurs ou éditeurs de Nuclear Nightmare. Tous les droits sur le jeu appartiennent à leurs ayants droit respectifs.*
