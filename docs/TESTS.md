@@ -1,14 +1,14 @@
 # Plan de test du patch français
 
-**Version candidate :** `v0.1.0-test`  
-**État :** archive technique construite ; exécution de Nuclear Nightmare non encore validée.  
+**Version candidate :** `v1.0.0-rc.1`  
+**État :** structure de l’archive contrôlée ; retour positif de l’utilisateur sur le choix de langue russe, mais compatibilité complète non confirmée.  
 **Langue détournée :** russe (`ru/Game.locres`). Le sélecteur affichera donc « Russe » pendant ce premier test.
 
 ## Installation
 
 1. Ouvrir Steam → Bibliothèque → Nuclear Nightmare → Propriétés → Fichiers installés → Parcourir.
 2. Fermer le jeu.
-3. Décompresser `NuclearNightmare-FR-TEST.zip`.
+3. Décompresser `NuclearNightmare-FR-v1.0.0-rc.1.zip`.
 4. Fusionner le dossier `NuclearNightmare` du ZIP avec celui du jeu.
 5. Vérifier l'ajout de `NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak`.
 6. Ne pas remplacer `NuclearNightmare-Windows.pak`.
