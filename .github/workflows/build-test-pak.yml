@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Decode compiled French localization
+      - name: Decode and verify French localization
         shell: bash
         run: |
           set -euo pipefail
@@ -25,7 +25,7 @@ jobs:
           base64 --decode build/ru/Game.locres.b64 > staging/NuclearNightmare/Content/Localization/Game/ru/Game.locres
           echo 'b6e66e8f6f241bcf9f5aff065fd0160bbdc8c89b146e50780b337792257d3717  staging/NuclearNightmare/Content/Localization/Game/ru/Game.locres' | sha256sum --check -
 
-      - name: Download repak CLI
+      - name: Download repak v0.2.3
         shell: bash
         run: |
           set -euo pipefail
@@ -33,7 +33,7 @@ jobs:
           curl -fL --retry 3 'https://github.com/trumank/repak/releases/download/v0.2.3/repak_cli-x86_64-unknown-linux-gnu.tar.xz' -o tooling/repak.tar.xz
           tar -xJf tooling/repak.tar.xz -C tooling
           REPAK=$(find tooling -type f \( -name repak -o -name repak_cli \) -print -quit)
-          if [ -z "$REPAK" ]; then echo 'repak binary not found in release' >&2; exit 1; fi
+          test -n "$REPAK"
           chmod +x "$REPAK"
           echo "REPAK=$(realpath "$REPAK")" >> "$GITHUB_ENV"
 
@@ -41,30 +41,31 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p output install/NuclearNightmare/Content/Paks
-          "$REPAK" pack staging install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
-          test -s install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
+          mkdir -p install/NuclearNightmare/Content/Paks
+          PAK="install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak"
+          "$REPAK" pack staging "$PAK" --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
+          test -s "$PAK"
 
-      - name: Verify PAK contains the correct French localization
+      - name: Independent archive verification with repak
         shell: bash
         run: |
           set -euo pipefail
-          PAK=install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
+          PAK="install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak"
           "$REPAK" info "$PAK"
           "$REPAK" list "$PAK" | grep -Fx 'NuclearNightmare/Content/Localization/Game/ru/Game.locres'
           "$REPAK" get "$PAK" 'NuclearNightmare/Content/Localization/Game/ru/Game.locres' > recovered.locres
           cmp recovered.locres staging/NuclearNightmare/Content/Localization/Game/ru/Game.locres
 
-      - name: Package TEST ZIP and checksums
+      - name: Create single-file installation ZIP with checksums
         shell: bash
         run: |
           set -euo pipefail
-          cd install
-          zip -qr ../NuclearNightmare-FR-TEST.zip NuclearNightmare
-          cd ..
+          (cd install && zip -q -r ../NuclearNightmare-FR-TEST.zip NuclearNightmare)
           sha256sum NuclearNightmare-FR-TEST.zip > SHA256SUMS.txt
+          unzip -l NuclearNightmare-FR-TEST.zip
+          test "$(unzip -Z1 NuclearNightmare-FR-TEST.zip | grep -c '\.pak$')" -eq 1
 
-      - name: Publish workflow test artifact (not a release)
+      - name: Publish test artifact
         uses: actions/upload-artifact@v4
         with:
           name: NuclearNightmare-FR-TEST
@@ -73,20 +74,19 @@ jobs:
             SHA256SUMS.txt
           if-no-files-found: error
 
-      - name: Publish test pre-release
-        if: success()
+      - name: Create or update draft GitHub Release for owner testing
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-        shell: bash
         run: |
           set -euo pipefail
           TAG="v0.1.0-test"
-          if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt --clobber
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt --clobber --repo "$GITHUB_REPOSITORY"
           else
             gh release create "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt \
-              --target "$GITHUB_SHA" \
-              --title "Traduction française — test v0.1.0" \
-              --notes "Préversion réservée aux tests, NON validée en jeu. Installer le ZIP en copiant NuclearNightmare/ dans le dossier du jeu, puis sélectionner Russe. Aucun fichier original n'est remplacé. Voir README." \
-              --prerelease
+              --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+              --title "Traduction française — test technique v0.1.0" \
+              --notes "Patch de traduction française (1 463 clés) à tester. Installer en copiant le dossier NuclearNightmare du ZIP dans le dossier principal du jeu, puis sélectionner Russe. Chargement en jeu et qualité linguistique non validés. Ne pas promouvoir comme version stable avant test." \
+              --draft --prerelease
           fi
