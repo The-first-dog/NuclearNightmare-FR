@@ -1,0 +1,3 @@
+# Nuclear Nightmare — traduction FR v1.0.0 RC1
+# Archive déposée dans le dépôt GitHub (dossier downloads/)
+4f0698246d133963821d2094c6e84edf4dd21e247e158be205646addc33d49d7  NuclearNightmare-FR-v1.0.0-rc.1.zip
