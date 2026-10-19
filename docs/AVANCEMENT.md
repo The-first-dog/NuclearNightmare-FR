@@ -1,29 +1,30 @@
-# Avancement de la localisation française
+# Avancement — 19 octobre 2026
 
-**19 octobre 2026 — version de travail**
+## Localisation
 
-- **1 463 / 1 463** identifiants disposent d'une proposition en français.
-- **1 454** brouillons à relire.
-- **9** entrées demandant une vérification prioritaire dans le jeu (rapports longs, chaînes de test et confirmations).
-- **0** différence détectée sur les paramètres du type `{0}`, `{username}`, `%s`.
-- Reconstruction d'un `Game.locres` version 3 réussie localement à partir des fichiers anglais/russe de référence.
-- **Aucun mod `.pak` compatible testé ni publié.**
+- **1 463 / 1 463** entrées ont un brouillon français.
+- **1 443** entrées n'ont pas encore fait l'objet d'une vérification ciblée.
+- **11** textes ont été révisés manuellement ; ils restent à tester en contexte.
+- **9** textes sensibles (rapports narratifs, instructions longues et textes de test) restent à vérifier prioritairement en jeu.
+- **11** variantes françaises spécifiques aux chaînes russes ont été ajoutées pour corriger de véritables divergences anglais/russe.
+- **92** clés ont un hash de source différent entre les deux localisations.
+- Les balises de formatage et variables ont été contrôlées par le script ; les **1 463** entrées ont passé la reconstruction en `.locres` v3.
 
-## Limitations actuelles
+## Patch technique
 
-Le jeu comprend 781 entrées dans `en/Game.locres` et 1 407 dans `ru/Game.locres` ; l'union donne 1 463 clés. **92 clés communes ont des hashes source différents** et devront être contrôlées en jeu. Certaines chaînes proviennent uniquement de la localisation russe ; une relecture contextuelle est importante.
+- Archive du jeu d'origine : Unreal Engine PAK V11, mount point `../../../`, seed `0x42459304` (1111855876).
+- Cible provisoire : `NuclearNightmare/Content/Localization/Game/ru/Game.locres`.
+- Constructeur local : `tools/construire_pak_test.sh` (nécessite le programme `repak` installé et les archives sources de sa copie du jeu).
+- Un workflow GitHub Actions produit un ZIP de test et vérifie les octets du `.locres` à l'intérieur du `.pak` construit.
 
-La couverture de 100 % signifie que chaque clé a une proposition, **pas que la qualité linguistique et le chargement en jeu sont validés**.
+**Le chargement effectif du mod dans le jeu n'a pas été vérifié.** Une vérification statique du conteneur n'est pas un test d'intégration Unreal.
 
-## Prochaines tâches
+## Prochain contrôle
 
-1. Relecture et cohérence terminologique : documents confidentiels, équipements, créatures, lieux.
-2. Vérification des neuf chaînes sensibles et des longues notes.
-3. Validation des retours à la ligne et de la largeur des composants d'interface.
-4. Essai du chargement de `fr/Game.locres` ou de la substitution de langue sur une copie légitime.
-5. Construction d'un `.pak` autonome avec un nom et un ordre de chargement compatibles.
-6. Test sur une version déterminée du jeu, puis publication d'une Release ZIP avec SHA-256.
+1. Vérifier que le workflow a abouti et que le ZIP est bien téléchargé depuis ses artefacts.
+2. Copier le `.pak` de test dans `NuclearNightmare/Content/Paks/` sans remplacer l'archive du jeu.
+3. Passer la langue sur **Russe** et vérifier menus, objectifs, descriptions et rapports.
+4. Vérifier les effets d'un patch sur un jeu mis à jour, les textes non couverts par `.locres`, et la présence des glyphes français.
+5. Corriger d'éventuelles erreurs, puis publier une Release lorsque les tests sont réussis.
 
-## Mise à jour des textes
-
-Le CSV du dossier `translations/` est la source de référence. Ne pas modifier les clés Unreal (`Cle`, `Namespace`) et les hashes. Toutes les suggestions sont provisoires et ne constituent pas encore une version finale.
+**Ne pas présenter ce travail comme une traduction intégralement relue.**
