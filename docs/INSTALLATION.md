@@ -1,62 +1,53 @@
 # Installer la traduction française de Nuclear Nightmare
 
-> ⚠️ **Cette installation n'a pas encore été validée en jeu. Il n'existe actuellement aucune Release prête pour le public.** Ce guide décrit le fonctionnement prévu et sera ajusté après les premiers tests.
+**Version candidate : v1.0.0 RC1** — installation simple par copie d'un fichier `.pak`.
 
-## 1. Télécharger le bon fichier
+## Télécharger
 
-Une fois disponible, ouvrez la page [Releases](https://github.com/The-first-dog/NuclearNightmare-FR/releases) et récupérez **le ZIP de traduction**, et non les liens automatiques `Source code (zip)` / `Source code (tar.gz)` de GitHub.
+Consultez les **[Releases GitHub](https://github.com/The-first-dog/NuclearNightmare-FR/releases)** puis téléchargez `NuclearNightmare-FR-v1.0.0-rc.1.zip` lorsque la version apparaît. Les fichiers intitulés « Source code » ne sont pas des installateurs.
 
-Le ZIP devra contenir :
+La publication est automatisée après vérification technique. Si le ZIP n'est pas visible dans les Releases, sa présence en ligne **n'a pas encore été confirmée**.
+
+## Installation sous Windows (Steam)
+
+1. Fermez **Nuclear Nightmare**.
+2. Ouvrez Steam → **Bibliothèque** → clic droit sur **Nuclear Nightmare** → **Propriétés** → **Fichiers installés** → **Parcourir**.
+3. Décompressez le ZIP téléchargé.
+4. Copiez le dossier `NuclearNightmare` extrait dans le **dossier principal du jeu** (là où se trouve `NuclearNightmare.exe`).
+5. Autorisez la **fusion des dossiers**. Aucun fichier original ne doit être remplacé.
+6. Vérifiez que le fichier ajouté est ici :
 
 ```text
 NuclearNightmare/
 └── Content/
     └── Paks/
-        └── NuclearNightmare-FR_P.pak
+        ├── NuclearNightmare-Windows.pak   (fichier original à conserver)
+        └── NuclearNightmare-FR_P.pak       (fichier ajouté)
 ```
 
-L'utilisateur n'aura aucun logiciel à installer ni programme à exécuter.
+7. Démarrez le jeu et sélectionnez **Russe** dans les langues. Le patch utilise provisoirement cet emplacement pour le français.
 
-## 2. Trouver le dossier du jeu
+## Désinstallation
 
-**Sur Windows ou Linux avec Steam/Proton :**
+Fermez le jeu. Supprimez **uniquement** `NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak`, puis relancez le jeu.
 
-1. Ouvrez **Steam → Bibliothèque**.
-2. Faites un clic droit sur **Nuclear Nightmare**.
-3. Choisissez **Propriétés → Fichiers installés → Parcourir** (le libellé peut varier légèrement selon la version de Steam).
-4. Le dossier racine du jeu s'ouvre. Il devrait notamment contenir **`NuclearNightmare.exe`** sur la version Windows.
+## Résoudre un problème
 
-Cette méthode évite de devoir deviner le chemin du dossier Steam.
+- **Le français ne s'affiche pas :** vérifiez le chemin du `.pak`, la sélection « Russe » et la version du jeu.
+- **Le jeu ne démarre plus :** supprimez le seul `.pak` ajouté, puis redémarrez.
+- **Texte coupé ou mal traduit :** fournissez une capture dans les [Issues](https://github.com/The-first-dog/NuclearNightmare-FR/issues/new).
+- **Linux / Steam Proton :** non validé pour cette version ; aucune compatibilité garantie.
 
-## 3. Copier la traduction
+### Vérification de l'intégrité du ZIP
 
-1. Décompressez le ZIP de traduction.
-2. Copiez son dossier **`NuclearNightmare`** dans le dossier racine du jeu ouvert précédemment.
-3. Acceptez la **fusion des dossiers** si Steam ou le gestionnaire de fichiers le propose.
-4. Le fichier suivant doit se trouver à cet emplacement :
+Une empreinte SHA-256 est publiée avec l'archive dans `SHA256SUMS.txt`. Sous Windows, vous pouvez vérifier l'empreinte avec :
 
-```text
-NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
+```powershell
+Get-FileHash .\NuclearNightmare-FR-v1.0.0-rc.1.zip -Algorithm SHA256
 ```
 
-**Ne supprimez ni ne remplacez** `NuclearNightmare-Windows.pak`.
+La valeur affichée doit être égale à celle indiquée dans `SHA256SUMS.txt`.
 
-## 4. Choisir la langue
+## Précisions
 
-Pour le **prototype de test**, le patch est conçu pour remplacer les ressources de la **langue russe**. Après démarrage du jeu, choisissez donc **Russe** dans le menu des langues. Cela ne garantit pas encore que le patch sera chargé : ce point doit être testé.
-
-## 5. Désinstaller ou revenir à la version originale
-
-Fermez le jeu, supprimez uniquement **`NuclearNightmare-FR_P.pak`** du dossier **`NuclearNightmare/Content/Paks/`**, puis relancez le jeu.
-
-Si le jeu pose problème, vous pouvez également utiliser dans Steam **Propriétés → Fichiers installés → Vérifier l'intégrité des fichiers du jeu**. Cette vérification peut restaurer les fichiers officiels ; elle ne retire pas nécessairement les fichiers supplémentaires ajoutés manuellement.
-
-## 6. Signaler un problème
-
-Ouvrez une [Issue](https://github.com/The-first-dog/NuclearNightmare-FR/issues) avec la version du jeu, une capture d'écran et une courte description.
-
-### Pour les testeurs et mainteneurs seulement
-
-Le projet comprend un [workflow de construction du patch](https://github.com/The-first-dog/NuclearNightmare-FR/blob/main/.github/workflows/build-test-pak.yml) et des [scripts](https://github.com/The-first-dog/NuclearNightmare-FR/tree/main/tools). Ce matériel ne remplace pas un ZIP de Release testé ; les artefacts GitHub Actions peuvent nécessiter une connexion et expirer.
-
-La traduction est un projet de fans indépendant. Une copie officielle du jeu est nécessaire.
+Le patch est une traduction de fans non officielle, non associée aux créateurs du jeu. Il ne fournit aucun exécutable, seulement un `.pak` de localisation. Une copie originale du jeu est nécessaire.
