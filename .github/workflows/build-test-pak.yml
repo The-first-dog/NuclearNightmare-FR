@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-test-pak:
@@ -72,3 +72,21 @@ jobs:
             NuclearNightmare-FR-TEST.zip
             SHA256SUMS.txt
           if-no-files-found: error
+
+      - name: Publish test pre-release
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="v0.1.0-test"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt --clobber
+          else
+            gh release create "$TAG" NuclearNightmare-FR-TEST.zip SHA256SUMS.txt \
+              --target "$GITHUB_SHA" \
+              --title "Traduction française — test v0.1.0" \
+              --notes "Préversion réservée aux tests, NON validée en jeu. Installer le ZIP en copiant NuclearNightmare/ dans le dossier du jeu, puis sélectionner Russe. Aucun fichier original n'est remplacé. Voir README." \
+              --prerelease
+          fi
