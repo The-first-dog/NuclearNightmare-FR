@@ -42,9 +42,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p output install/NuclearNightmare/Content/Paks
-          "$REPAK" pack staging output --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
-          test -f output/staging.pak
-          mv output/staging.pak install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
+          "$REPAK" pack staging install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak --version V11 --path-hash-seed 1111855876 --mount-point '../../../'
+          test -s install/NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak
 
       - name: Verify PAK contains the correct French localization
         shell: bash
