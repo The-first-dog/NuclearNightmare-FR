@@ -4,13 +4,15 @@
 
 Ce patch ajoute le français aux textes de localisation du jeu. Il s'installe par simple copie d'un fichier `.pak`, sans logiciel externe ni installateur.
 
-## 📥 Télécharger
+## 📥 Télécharger la traduction française
 
-➡️ **[Télécharger la traduction française (GitHub Releases)](https://github.com/The-first-dog/NuclearNightmare-FR/releases)**
+➡️ **[Télécharger NuclearNightmare-FR-v1.0.0-rc.1.zip](https://github.com/The-first-dog/NuclearNightmare-FR/raw/refs/heads/main/downloads/NuclearNightmare-FR-v1.0.0-rc.1.zip)**
 
-**Version prévue : v1.0.0 RC1 (version candidate).** La publication du ZIP est automatisée par GitHub Actions après vérification de l'archive. Si cette version n'apparaît pas sur la page des Releases, la construction ou la publication n'est pas encore confirmée.
+**Version : v1.0.0 RC1 (candidate).** Le ZIP est disponible directement dans le dépôt. La [page Releases](https://github.com/The-first-dog/NuclearNightmare-FR/releases) propose également les versions publiées automatiquement si la construction GitHub Actions a réussi.
 
-Dans la Release, télécharger **`NuclearNightmare-FR-v1.0.0-rc.1.zip`** : ne pas choisir les archives automatiques « Source code » de GitHub.
+🔐 [Empreinte SHA-256 du téléchargement](downloads/SHA256SUMS.txt) : `4f0698246d133963821d2094c6e84edf4dd21e247e158be205646addc33d49d7`
+
+**Ne téléchargez pas les archives automatiques « Source code » de GitHub : elles ne contiennent pas nécessairement le patch prêt à installer.**
 
 ## 🇫🇷 Contenu traduit
 
@@ -24,7 +26,7 @@ Dans la Release, télécharger **`NuclearNightmare-FR-v1.0.0-rc.1.zip`** : ne pa
 
 ## 📦 Installation
 
-1. Téléchargez l'archive ZIP depuis les **[Releases](https://github.com/The-first-dog/NuclearNightmare-FR/releases)**.
+1. Téléchargez **[l'archive ZIP française](https://github.com/The-first-dog/NuclearNightmare-FR/raw/refs/heads/main/downloads/NuclearNightmare-FR-v1.0.0-rc.1.zip)**.
 2. Dans Steam : **Bibliothèque → Nuclear Nightmare → Propriétés → Fichiers installés → Parcourir**.
 3. **Fermez le jeu.** Décompressez le ZIP, puis copiez le dossier `NuclearNightmare` extrait **dans le dossier principal du jeu**. Acceptez seulement la fusion des dossiers.
 4. Vérifiez la présence du fichier `NuclearNightmare/Content/Paks/NuclearNightmare-FR_P.pak`.
